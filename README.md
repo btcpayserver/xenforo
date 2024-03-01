@@ -16,7 +16,6 @@
 ### Notes
 - The add-on does not support recurring payments
 - The add-on does not support refunds
-- The add-on does not support partial payments
 
 ## Installation
 1. Download the add-on from the [releases page](https://github.com/021-projects/xf2-btcpay/releases)
