@@ -1,0 +1,15 @@
+{
+    "legacy_addon_id": "",
+    "title": "[021] BTCPay Provider",
+    "description": "Payment provider for BTCPay Server.",
+    "version_id": 1000070,
+    "version_string": "1.0.0",
+    "dev": "021",
+    "dev_url": "https://devsell.io/",
+    "faq_url": "",
+    "support_url": "https://devsell.io/",
+    "extra_urls": [],
+    "require": [],
+    "icon": "icon.png",
+    "composer_autoload": "vendor/composer"
+}
