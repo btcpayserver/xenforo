@@ -179,6 +179,8 @@ class BTCPayServer extends AbstractProvider
         $storeId = $options['store_id'] ?? '';
         $secret = $options['secret'] ?? '';
 
+        $host = $options['host'] = rtrim($host, '/');
+
         if (! $host) {
             $errors[] = \XF::phrase('btcpayprovider_host_required');
         }
