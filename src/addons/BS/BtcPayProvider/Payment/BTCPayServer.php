@@ -15,6 +15,8 @@ use XF\Purchasable\Purchase;
 
 class BTCPayServer extends AbstractProvider
 {
+    use Concerns\Webhook;
+
     public function getTitle()
     {
         return 'BTCPay Server';
@@ -87,6 +89,7 @@ class BTCPayServer extends AbstractProvider
         $state->requestKey = $metadata['request_key'] ?? '';
         $state->transactionId = $payload['invoiceId'] ?? '';
         $state->hookType = $payload['type'] ?? '';
+        $state->payload = $payload;
 
         return $state;
     }
@@ -103,14 +106,11 @@ class BTCPayServer extends AbstractProvider
 
         $secret = $paymentProfile->options['secret'];
 
-        if ($state->hookType !== 'InvoiceSettled') {
-            $state->logType = false;
-            $state->logMessage = 'Invalid hook type.';
-            $state->httpCode = 200;
-            return false;
-        }
-
-        if (! Webhook::isIncomingWebhookRequestValid($state->inputRaw, $state->signature, $secret)) {
+        if (! Webhook::isIncomingWebhookRequestValid(
+            $state->inputRaw,
+            $state->signature,
+            $secret
+        )) {
             $state->logType = 'error';
             $state->logMessage = 'Invalid signature.';
             return false;
@@ -156,11 +156,13 @@ class BTCPayServer extends AbstractProvider
 
     public function getPaymentResult(CallbackState $state)
     {
-        if ($state->hookType !== 'InvoiceSettled') {
-            return;
+        $result = $this->getWebhookPaymentResult($state);
+        if (! $result) {
+            return null;
         }
 
-        $state->paymentResult = CallbackState::PAYMENT_RECEIVED;
+        $state->paymentResult = $result;
+        return $result;
     }
 
     public function prepareLogData(CallbackState $state)
