@@ -1,6 +1,6 @@
 # BTCPay Server Payment Provider – Accept Bitcoin payments in XenForo 2
 
-![BTCPay XenForo Banner](https://raw.githubusercontent.com/btcpayserver/xenforo/src/addons/BS/BtcPayProvider/btcpay-xenforo-banner.png)
+![BTCPay XenForo Banner](https://raw.githubusercontent.com/btcpayserver/xenforo/main/src/addons/BS/BtcPayProvider/btcpay-xenforo-banner.png)
 
 [![Maintained](https://img.shields.io/maintenance/yes/2024?style=flat-square)](https://github.com/021-projects/xf2-btcpay/pulse)
 [![GitHub License](https://img.shields.io/github/license/021-projects/xf2-btcpay?color=brightgreen&style=flat-square)](https://github.com/021-projects/xf2-btcpay/blob/main/LICENSE)
