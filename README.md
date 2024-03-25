@@ -1,4 +1,7 @@
-# BTCPay Payment Provider for XenForo 2
+# BTCPay Server Payment Provider – Accept Bitcoin payments in XenForo 2
+
+![BTCPay XenForo Banner](https://raw.githubusercontent.com/btcpayserver/xenforo/src/addons/BS/BtcPayProvider/btcpay-xenforo-banner.png)
+
 [![Maintained](https://img.shields.io/maintenance/yes/2024?style=flat-square)](https://github.com/021-projects/xf2-btcpay/pulse)
 [![GitHub License](https://img.shields.io/github/license/021-projects/xf2-btcpay?color=brightgreen&style=flat-square)](https://github.com/021-projects/xf2-btcpay/blob/main/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors-anon/021-projects/xf2-btcpay?style=flat-square)](https://github.com/021-projects/xf2-btcpay/graphs/contributors)
@@ -18,7 +21,7 @@
 - The add-on does not support refunds
 
 ## Installation
-1. Download the add-on from the [releases page](https://github.com/021-projects/xf2-btcpay/releases)
+1. Download the add-on from the [releases page](https://github.com/btcpayserver/xenforo/releases)
 2. Install the add-on via [control panel](https://xenforo.com/docs/xf2/add-ons/#control-panel-installation-21) or [manually](https://xenforo.com/docs/xf2/add-ons/#manual-installation)
 
 ## Configuration
@@ -70,7 +73,7 @@ In most cases, a newly created payment profile requires activation in certain co
 Let's look at an example of activating a newly created profile for user upgrades:
 
 1. Go to XenForo Admin Panel (/admin.php)
-2. Click on [Setup] -> [Users] -> [User upgrades]
+2. Click on [Setup] -> [Users] -> [Users customization]-> [User upgrades]
 3. Click on the user upgrade you want to activate the payment profile for
 4. Select the payment profile you created in the "Payment profile" select box
 5. Click on [Save]
