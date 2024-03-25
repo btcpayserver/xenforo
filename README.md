@@ -39,8 +39,9 @@
 5. Check the following permissions:
    - Create an invoice (btcpay.store.cancreateinvoice)
    - View your stores (btcpay.store.canviewstoresettings)
-6. Click on [Generate API Key]
-7. Copy the generated API Key to your BTCPay Server payment profile settings form
+6. Below the permissions click on [Select specific stores] and select the store created already (this ensures the API key is restricted to this single store)
+7. Click on [Generate API Key]
+8. Copy the generated API Key to your BTCPay Server payment profile settings form
 
 ### Setup Webhook
 1. Go to your BTCPay Server
