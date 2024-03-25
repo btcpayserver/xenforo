@@ -1,6 +1,6 @@
-# BTCPay Server Payment Provider– Accept Bitcoin payments in XenForo 2
+# BTCPay Server Payment Provider – Accept Bitcoin payments in XenForo 2
 
-![BTCPay nopCommerce Banner](https://raw.githubusercontent.com/btcpayserver/xenforo/src/addons/BS/BtcPayProvider/btcpay-xenforo-banner.png)
+![BTCPay XenForo Banner](https://raw.githubusercontent.com/btcpayserver/xenforo/src/addons/BS/BtcPayProvider/btcpay-xenforo-banner.png)
 
 [![Maintained](https://img.shields.io/maintenance/yes/2024?style=flat-square)](https://github.com/021-projects/xf2-btcpay/pulse)
 [![GitHub License](https://img.shields.io/github/license/021-projects/xf2-btcpay?color=brightgreen&style=flat-square)](https://github.com/021-projects/xf2-btcpay/blob/main/LICENSE)
@@ -21,7 +21,7 @@
 - The add-on does not support refunds
 
 ## Installation
-1. Download the add-on from the [releases page](https://github.com/021-projects/xf2-btcpay/releases)
+1. Download the add-on from the [releases page](https://github.com/btcpayserver/xenforo/releases)
 2. Install the add-on via [control panel](https://xenforo.com/docs/xf2/add-ons/#control-panel-installation-21) or [manually](https://xenforo.com/docs/xf2/add-ons/#manual-installation)
 
 ## Configuration
