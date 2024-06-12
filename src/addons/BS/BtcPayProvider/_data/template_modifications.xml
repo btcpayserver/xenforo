@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- i hate the xenforo template system so much, i hope oneday someone fixes it, this actually so bad, one fucking additional space breaks everything -->
+<template_modifications>
+    <modification type="public" template="xfa_core_user_payment_profiles" modification_key="xfa_core_user_payment_profiles_btcpay" description="Injecting RM Marketplace template" execution_order="10" enabled="1" action="str_replace">
+        <find><![CDATA[<xf:macro name="pbp_btcpay" arg-configuration="!" arg-active="!">
+	<xf:checkboxrow>
+		<xf:option name="configuration[pbp_btcpay][active]" value="1" checked="{{ $active ? true : false  }}">{{ phrase('xfa_core_accept_this_payment_mean') }}</xf:option>
+	</xf:checkboxrow>
+
+	<xf:textboxrow name="configuration[pbp_btcpay][api_url]" value="{$configuration.api_url}" type="url" required="true"
+				   explain="{{ phrase('pbp_btcpay_api_url_explain') }}"
+				   label="{{ phrase('pbp_btcpay_api_url') }}" />
+
+	<xf:textboxrow name="configuration[pbp_btcpay][store_id]" value="{$configuration.store_id}" required="true"
+				   explain="{{ phrase('pbp_btcpay_store_id_explain') }}"
+				   label="{{ phrase('pbp_btcpay_store_id') }}" />
+
+	<xf:textboxrow name="configuration[pbp_btcpay][api_key]" value="{$configuration.api_key}" required="true"
+				   label="{{ phrase('pbp_btcpay_api_key') }}"
+				   explain="{{ phrase('pbp_btcpay_api_key_explain') }}" />
+
+	<xf:textboxrow name="configuration[pbp_btcpay][webhook_secret]" required="true"
+				   label="{{ phrase('pbp_btcpay_webhook_secret') }}"
+				   explain="{{ phrase('pbp_btcpay_webhook_secret_explain') }}"
+				   value="{$configuration.webhook_secret}" />
+</xf:macro>]]></find>
+        <replace><![CDATA[$0<xf:macro name="btcPayServer" arg-configuration="!" arg-active="!">
+	<xf:checkboxrow>
+		<xf:option name="configuration[btcPayServer][active]" value="1" checked="{{ $active ? true : false  }}">{{ phrase('xfa_core_accept_this_payment_mean') }}</xf:option>
+	</xf:checkboxrow>
+		<xf:textboxrow name="configuration[btcPayServer][host]" value="{$configuration.host}" required="true"
+				   explain="{{ phrase('btcpayserver_host_explain') }}"
+				   label="{{ phrase('btcpayserver_host') }}" />
+		<xf:textboxrow name="configuration[btcPayServer][api_key]" value="{$configuration.api_key}" required="true"
+				   explain="{{ phrase('btcpayserver_api_key_explain') }}"
+				   label="{{ phrase('btcpayserver_api_key') }}" />
+		<xf:textboxrow name="configuration[btcPayServer][store_id]" value="{$configuration.store_id}" required="true"
+				   explain="{{ phrase('btcpayserver_store_id_explain') }}"
+				   label="{{ phrase('btcpayserver_store_id') }}" />
+		<xf:textboxrow name="configuration[btcPayServer][secret]" value="{$configuration.secret}" type="password" required="true"
+				   explain="{{ phrase('btcpayserver_secret_explain') }}"
+				   label="{{ phrase('btcpayserver_secret') }}" />
+</xf:macro>]]></replace>
+    </modification>
+</template_modifications>
