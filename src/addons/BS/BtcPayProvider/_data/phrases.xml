@@ -7,7 +7,11 @@
     <phrase title="btcpayprovider_secret_required" version_id="1000070" version_string="1.0.0"><![CDATA[Secret required]]></phrase>
     <phrase title="btcpayprovider_store_id_required" version_id="1000070" version_string="1.0.0"><![CDATA[Store ID required]]></phrase>
     <phrase title="btcpayserver_api_key" version_id="1000070" version_string="1.0.0"><![CDATA[API Key]]></phrase>
+    <phrase title="btcpayserver_api_key_explain" version_id="1000070" version_string="1.0.0"><![CDATA[Put your BTCPay account API Key here.<br>You can create one when going to Manage Account -> API Key]]></phrase>
     <phrase title="btcpayserver_host" version_id="1000070" version_string="1.0.0"><![CDATA[Host]]></phrase>
+    <phrase title="btcpayserver_host_explain" version_id="1000070" version_string="1.0.0"><![CDATA[Enter the address to the BTCPay instance you want to use.<br>Example: https://mainnet.demo.btcpayserver.org]]></phrase>
     <phrase title="btcpayserver_secret" version_id="1000070" version_string="1.0.0"><![CDATA[Secret]]></phrase>
+    <phrase title="btcpayserver_secret_explain" version_id="1000070" version_string="1.0.0"><![CDATA[The Webhook Secret to verify purchases goes here.<br>You can create a Webhook at Store Settings -> Webhook.<br>Use the payload URL like in the example, replacing the url with your xenforo instance.<br>Example: https://example.com/payment_callback.php?_xfProvider=btcPayServer]]></phrase>
     <phrase title="btcpayserver_store_id" version_id="1000070" version_string="1.0.0"><![CDATA[Store ID]]></phrase>
+    <phrase title="btcpayserver_store_id_explain" version_id="1000070" version_string="1.0.0"><![CDATA[Your Store ID goes here.<br>You can find it under Store Settings -> General]]></phrase>
 </phrases>

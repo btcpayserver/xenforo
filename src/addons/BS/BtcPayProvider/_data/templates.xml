@@ -3,15 +3,19 @@
 	<!-- The template for the admin control panel -->
 	<template type="admin" title="payment_profile_btcPayServer" version_id="1000070" version_string="1.0.0"><![CDATA[
 <xf:textboxrow name="options[host]" value="{$profile.options.host}"
+	explain="{{ phrase('btcpayserver_host_explain') }}"
 	label="{{ phrase('btcpayserver_host') }}"/>
 
 <xf:textboxrow name="options[api_key]" value="{$profile.options.api_key}"
+	explain="{{ phrase('btcpayserver_api_key_explain') }}"
 	label="{{ phrase('btcpayserver_api_key') }}" />
 
 <xf:textboxrow name="options[secret]" value="{$profile.options.secret}"
+	explain="{{ phrase('btcpayserver_secret_explain') }}"
 	label="{{ phrase('btcpayserver_secret') }}" type="password" />
 
 <xf:textboxrow name="options[store_id]" value="{$profile.options.store_id}"
+	explain="{{ phrase('btcpayserver_store_id_explain') }}"
 	label="{{ phrase('btcpayserver_store_id') }}" />
 ]]></template>
 
