@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+	<!-- The template for the admin control panel -->
+	<template type="admin" title="payment_profile_btcPayServer" version_id="1000070" version_string="1.0.0"><![CDATA[
+<xf:textboxrow name="options[host]" value="{$profile.options.host}"
+	label="{{ phrase('btcpayserver_host') }}"/>
+
+<xf:textboxrow name="options[api_key]" value="{$profile.options.api_key}"
+	label="{{ phrase('btcpayserver_api_key') }}" />
+
+<xf:textboxrow name="options[secret]" value="{$profile.options.secret}"
+	label="{{ phrase('btcpayserver_secret') }}" type="password" />
+
+<xf:textboxrow name="options[store_id]" value="{$profile.options.store_id}"
+	label="{{ phrase('btcpayserver_store_id') }}" />
+]]></template>
+
+	<!-- The template for the invoice view -->
+	<template type="public" title="btcpay_show_invoice" version_id="1000070" version_string="1.0.0"><![CDATA[
+<xf:js src="{$scriptUrl}" />
+<xf:js>
+	$('.overlay-container.is-active').last().find('.overlay').trigger('overlay:hide')
+	window.btcpay.showInvoice('{$invoice.getId()}')
+</xf:js>
+]]>
+	</template>
+</templates>

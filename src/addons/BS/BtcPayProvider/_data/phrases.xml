@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+    <phrase title="btcpayprovider_api_key_required" version_id="1000070" version_string="1.0.0"><![CDATA[API Key required]]></phrase>
+    <phrase title="btcpayprovider_cannot_connect_to_store" version_id="1000070" version_string="1.0.0"><![CDATA[Unable to connect to the store. Make sure all fields are filled out correctly.]]></phrase>
+    <phrase title="btcpayprovider_host_required" version_id="1000070" version_string="1.0.0"><![CDATA[Host required]]></phrase>
+    <phrase title="btcpayprovider_invoice_creation_failed" version_id="1000070" version_string="1.0.0"><![CDATA[There was a problem creating an invoice. Please try again later.]]></phrase>
+    <phrase title="btcpayprovider_secret_required" version_id="1000070" version_string="1.0.0"><![CDATA[Secret required]]></phrase>
+    <phrase title="btcpayprovider_store_id_required" version_id="1000070" version_string="1.0.0"><![CDATA[Store ID required]]></phrase>
+    <phrase title="btcpayserver_api_key" version_id="1000070" version_string="1.0.0"><![CDATA[API Key]]></phrase>
+    <phrase title="btcpayserver_host" version_id="1000070" version_string="1.0.0"><![CDATA[Host]]></phrase>
+    <phrase title="btcpayserver_secret" version_id="1000070" version_string="1.0.0"><![CDATA[Secret]]></phrase>
+    <phrase title="btcpayserver_store_id" version_id="1000070" version_string="1.0.0"><![CDATA[Store ID]]></phrase>
+</phrases>
