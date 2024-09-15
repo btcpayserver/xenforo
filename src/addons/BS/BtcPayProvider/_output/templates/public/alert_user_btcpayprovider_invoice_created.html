@@ -1,0 +1,13 @@
+<xf:set var="$uid">{{ unique_id() }}</xf:set>
+{{ phrase('btcpayprovider_the_invoice_for_x_has_been_created_to_pay_y', {
+	'cost': $extra.purchase.cost|currency($extra.purchase.currency),
+	'purchasable': $extra.purchase.title,
+	'uid': $uid
+}) }}
+<xf:js src="{$extra.scriptUrl}" />
+<xf:js>
+	(() => {
+		const link = document.querySelector('#{$uid}')
+		link.addEventListener('click', () => window.btcpay.showInvoice('{$extra.invoice.id}'))
+	})()
+</xf:js>

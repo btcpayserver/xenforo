@@ -1,0 +1,1 @@
+<a id="{uid}" data-xf-click>The invoice</a> for {cost} has been created to pay {purchasable}.

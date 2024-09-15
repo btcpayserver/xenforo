@@ -2,6 +2,7 @@
 
 namespace BS\BtcPayProvider\Payment;
 
+use BS\BtcPayProvider\Helpers\Purchase as PurchaseHelper;
 use BTCPayServer\Client\Invoice;
 use BTCPayServer\Client\Store;
 use BTCPayServer\Client\Webhook;
@@ -12,6 +13,8 @@ use XF\Mvc\Controller;
 use XF\Payment\AbstractProvider;
 use XF\Payment\CallbackState;
 use XF\Purchasable\Purchase;
+use XF\Repository\UserAlertRepository;
+use BTCPayServer\Result\Invoice as InvoiceResult;
 
 class BTCPayServer extends AbstractProvider
 {
@@ -37,10 +40,38 @@ class BTCPayServer extends AbstractProvider
 
         $scriptUrl = $purchaseRequest->PaymentProfile->options['host'] . '/modal/btcpay.js';
 
+        if ($purchaseRequest->PaymentProfile->options['invoice_alert'] ?? false) {
+            $this->sendAlertWithInvoice($purchase, $invoice, $scriptUrl);
+        }
+
         return $controller->view(
             'BS\BtcPayServer:Initiate\BTCPayServer',
             'btcpay_show_invoice',
             compact('purchaseRequest', 'invoice', 'scriptUrl')
+        );
+    }
+
+    protected function sendAlertWithInvoice(
+        Purchase $purchase,
+        InvoiceResult $invoice,
+        $scriptUrl
+    ): void {
+        $visitor = \XF::visitor();
+
+        /** @var UserAlertRepository $alertRepo */
+        $alertRepo = \XF::repository(UserAlertRepository::class);
+        $alertRepo->alert(
+            \XF::visitor(),
+            0,
+            '',
+            'user',
+            $visitor->user_id,
+            'btcpayprovider_invoice_created',
+            [
+                'purchase' => PurchaseHelper::purchaseToArray($purchase),
+                'invoice' => $invoice->getData(),
+                'scriptUrl' => $scriptUrl,
+            ]
         );
     }
 
@@ -180,6 +211,7 @@ class BTCPayServer extends AbstractProvider
         $apiKey = $options['api_key'] ?? '';
         $storeId = $options['store_id'] ?? '';
         $secret = $options['secret'] ?? '';
+        $invoiceAlert = (bool) ($options['invoice_alert'] ?? false);
 
         $host = $options['host'] = rtrim($host, '/');
 

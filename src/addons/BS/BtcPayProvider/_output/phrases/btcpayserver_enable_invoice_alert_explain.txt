@@ -1,0 +1,1 @@
+If this option is active, when creating an invoice, the user will receive an alert containing a link to pay. This option will help avoid creating multiple invoices for one purchase, and will also allow the user to track the invoice status after closing the payment overlay.

@@ -35,11 +35,29 @@
         "version_string": "1.0.0",
         "hash": "1a273059c96929ea1713eedb738fb7e9"
     },
+    "btcpayprovider_the_invoice_for_x_has_been_created_to_pay_y.txt": {
+        "global_cache": false,
+        "version_id": 1000070,
+        "version_string": "1.0.0",
+        "hash": "5c987636fc5c6cff251c7737070ecc64"
+    },
     "btcpayserver_api_key.txt": {
         "global_cache": false,
         "version_id": 1000070,
         "version_string": "1.0.0",
         "hash": "d876ff8da67c3731ae25d8335a4168b4"
+    },
+    "btcpayserver_enable_invoice_alert.txt": {
+        "global_cache": false,
+        "version_id": 1000070,
+        "version_string": "1.0.0",
+        "hash": "097d6d8ac165391105035b3588316aa8"
+    },
+    "btcpayserver_enable_invoice_alert_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000070,
+        "version_string": "1.0.0",
+        "hash": "db14b16b33d56cf1d19cedbfe72b1b9d"
     },
     "btcpayserver_host.txt": {
         "global_cache": false,
