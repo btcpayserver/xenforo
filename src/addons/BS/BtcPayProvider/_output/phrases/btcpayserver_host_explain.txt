@@ -1,0 +1,1 @@
+Enter the address to the BTCPay instance you want to use.<br>Example: https://mainnet.demo.btcpayserver.org

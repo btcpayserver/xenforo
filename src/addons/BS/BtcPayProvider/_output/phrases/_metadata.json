@@ -47,6 +47,12 @@
         "version_string": "1.0.0",
         "hash": "d876ff8da67c3731ae25d8335a4168b4"
     },
+    "btcpayserver_api_key_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000070,
+        "version_string": "1.0.0",
+        "hash": "fb75ea4eba2d8925006acdd694d991eb"
+    },
     "btcpayserver_enable_invoice_alert.txt": {
         "global_cache": false,
         "version_id": 1000070,
@@ -65,16 +71,34 @@
         "version_string": "1.0.0",
         "hash": "c2ca16d048ec66e04bca283eab048ec2"
     },
+    "btcpayserver_host_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000070,
+        "version_string": "1.0.0",
+        "hash": "f0945f3c97a181c618bc8c319f812b2c"
+    },
     "btcpayserver_secret.txt": {
         "global_cache": false,
         "version_id": 1000070,
         "version_string": "1.0.0",
         "hash": "1e6947ac7fb3a9529a9726eb692c8cc5"
     },
+    "btcpayserver_secret_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000070,
+        "version_string": "1.0.0",
+        "hash": "ed70c2d61b2d8676b8853a5824e29e14"
+    },
     "btcpayserver_store_id.txt": {
         "global_cache": false,
         "version_id": 1000070,
         "version_string": "1.0.0",
         "hash": "1feafb67c1da8183793afe1f61bce2f4"
+    },
+    "btcpayserver_store_id_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000070,
+        "version_string": "1.0.0",
+        "hash": "95a8a7ca79c1df2a2e6f45f03c75f02b"
     }
 }
