@@ -1,5 +1,10 @@
 <xf:js src="{$scriptUrl}" />
 <xf:js>
-	$('.overlay-container.is-active').last().find('.overlay').trigger('overlay:hide')
-	window.btcpay.showInvoice('{$invoice.getId()}')
+	(() => {
+		const overlays = document.querySelectorAll('.overlay-container.is-active')
+		const lastOverlay = overlays[overlays.length - 1]
+		lastOverlay.querySelector('.overlay').dispatchEvent(new Event('overlay:hide'))
+		window.btcpay.showInvoice('{$invoice.getId()}')
+	})()
 </xf:js>
+<div><!-- XF 2.3 need HTML content to run JS inline --></div>
