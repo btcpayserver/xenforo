@@ -4,8 +4,7 @@ namespace BS\BtcPayProvider\Payment\Concerns;
 
 use BTCPayServer\Client\Invoice;
 use XF\Payment\CallbackState;
-
-use function BS\BtcPayProvider\Helpers\data_get;
+use BS\BtcPayProvider\Helpers\Data;
 
 trait Webhook
 {
@@ -23,7 +22,7 @@ trait Webhook
                 return CallbackState::PAYMENT_RECEIVED;
 
             case 'InvoicePaymentSettled':
-                if (! data_get($state->purchaseRequest->extra_data, 'invoiceExpired')) {
+                if (! Data::get($state->purchaseRequest->extra_data, 'invoiceExpired')) {
                     $state->logType = 'info';
                     $state->logMessage = 'Invoice (partial) payment settled.';
                     return null;
@@ -40,7 +39,7 @@ trait Webhook
 
             case 'InvoiceReceivedPayment':
                 $state->logType = 'info';
-                if (data_get($payload, 'afterExpiration')) {
+                if (Data::get($payload, 'afterExpiration')) {
                     $state->logMessage = 'Invoice (partial) payment incoming (unconfirmed) after invoice was already expired.';
                 } else {
                     $state->logMessage = 'Invoice (partial) payment incoming (unconfirmed). Waiting for settlement.';
@@ -49,7 +48,7 @@ trait Webhook
 
             case 'InvoiceProcessing':
                 $state->logType = 'info';
-                if (data_get($payload, 'overPaid')) {
+                if (Data::get($payload, 'overPaid')) {
                     $state->logMessage = 'Invoice payment received fully with overpayment, waiting for settlement.';
                 } else {
                     $state->logMessage = 'Invoice payment received fully, waiting for settlement.';
@@ -58,7 +57,7 @@ trait Webhook
 
             case 'InvoiceExpired':
                 $state->logType = 'info';
-                if (data_get($payload, 'partiallyPaid')) {
+                if (Data::get($payload, 'partiallyPaid')) {
                     $state->logMessage = 'Invoice expired but was paid partially, please check.';
                 } else {
                     $state->logMessage = 'Invoice expired. No action to take.';
@@ -68,7 +67,7 @@ trait Webhook
 
             case 'InvoiceInvalid':
                 $state->logType = 'info';
-                if (data_get($payload, 'manuallyMarked')) {
+                if (Data::get($payload, 'manuallyMarked')) {
                     $state->logMessage = 'Invoice manually marked invalid.';
                 } else {
                     $state->logMessage = 'Invoice became invalid.';
