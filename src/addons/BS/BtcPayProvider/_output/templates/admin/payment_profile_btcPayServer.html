@@ -1,14 +1,19 @@
 <xf:textboxrow name="options[host]" value="{$profile.options.host}"
-	label="{{ phrase('btcpayserver_host') }}"/>
+	label="{{ phrase('btcpayserver_host') }}"
+	explain="{{ phrase('btcpayserver_host_explain') }}" />
 
 <xf:textboxrow name="options[api_key]" value="{$profile.options.api_key}"
-	label="{{ phrase('btcpayserver_api_key') }}" />
+	label="{{ phrase('btcpayserver_api_key') }}"
+	explain="{{ phrase('btcpayserver_api_key_explain') }}" />
 
 <xf:textboxrow name="options[secret]" value="{$profile.options.secret}"
-	label="{{ phrase('btcpayserver_secret') }}" type="password" />
+	label="{{ phrase('btcpayserver_secret') }}" 
+	explain="{{ phrase('btcpayserver_secret_explain') }}"
+    type="password" />
 
 <xf:textboxrow name="options[store_id]" value="{$profile.options.store_id}"
-	label="{{ phrase('btcpayserver_store_id') }}" />
+	label="{{ phrase('btcpayserver_store_id') }}" 
+	explain="{{ phrase('btcpayserver_store_id_explain') }}" />
 
 <xf:checkboxrow explain="{{ phrase('btcpayserver_enable_invoice_alert_explain') }}">
 	<xf:option label="{{ phrase('btcpayserver_enable_invoice_alert') }}" name="options[invoice_alert]" checked="{$profile.options.invoice_alert}" />

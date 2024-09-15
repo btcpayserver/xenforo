@@ -2,7 +2,7 @@
     "admin/payment_profile_btcPayServer.html": {
         "version_id": 1000070,
         "version_string": "1.0.0",
-        "hash": "c5427f34a5520323146511e37d53feea"
+        "hash": "6611ea1ab92867b91568f712c1539657"
     },
     "public/alert_user_btcpayprovider_invoice_created.html": {
         "version_id": 1000070,

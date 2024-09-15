@@ -1,0 +1,1 @@
+<a href="https://docs.btcpayserver.org/Xenforo/#create-api-key" target="_blank">Where to get an API key?</a>
