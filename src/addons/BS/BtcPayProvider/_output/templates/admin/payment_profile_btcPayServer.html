@@ -9,3 +9,7 @@
 
 <xf:textboxrow name="options[store_id]" value="{$profile.options.store_id}"
 	label="{{ phrase('btcpayserver_store_id') }}" />
+
+<xf:checkboxrow explain="{{ phrase('btcpayserver_enable_invoice_alert_explain') }}">
+	<xf:option label="{{ phrase('btcpayserver_enable_invoice_alert') }}" name="options[invoice_alert]" checked="{$profile.options.invoice_alert}" />
+</xf:checkboxrow>
