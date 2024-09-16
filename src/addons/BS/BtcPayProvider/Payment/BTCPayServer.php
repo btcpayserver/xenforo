@@ -13,7 +13,6 @@ use XF\Mvc\Controller;
 use XF\Payment\AbstractProvider;
 use XF\Payment\CallbackState;
 use XF\Purchasable\Purchase;
-use XF\Repository\UserAlertRepository;
 use BTCPayServer\Result\Invoice as InvoiceResult;
 
 class BTCPayServer extends AbstractProvider
@@ -58,8 +57,8 @@ class BTCPayServer extends AbstractProvider
     ): void {
         $visitor = \XF::visitor();
 
-        /** @var UserAlertRepository $alertRepo */
-        $alertRepo = \XF::repository(UserAlertRepository::class);
+        /** @var \XF\Repository\UserAlert $alertRepo */
+        $alertRepo = \XF::repository('XF:UserAlert');
         $alertRepo->alert(
             \XF::visitor(),
             0,
