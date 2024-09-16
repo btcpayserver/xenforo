@@ -22,7 +22,6 @@ class Purchase
             'extraData' => $purchase->extraData,
             'cancelUrl' => $purchase->cancelUrl,
             'returnUrl' => $purchase->returnUrl,
-            'updateUrl' => $purchase->updateUrl,
             'requestKey' => $purchase->requestKey,
         ];
     }
