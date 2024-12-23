@@ -22,7 +22,9 @@ class Purchase
             'extraData' => $purchase->extraData,
             'cancelUrl' => $purchase->cancelUrl,
             'returnUrl' => $purchase->returnUrl,
-            'updateUrl' => $purchase->updateUrl,
+            'updateUrl' => $purchase->offsetExists('updateUrl')
+                ? $purchase->updateUrl
+                : null,
             'requestKey' => $purchase->requestKey,
         ];
     }

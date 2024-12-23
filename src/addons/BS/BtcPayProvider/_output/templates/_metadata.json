@@ -5,13 +5,13 @@
         "hash": "6611ea1ab92867b91568f712c1539657"
     },
     "public/alert_user_btcpayprovider_invoice_created.html": {
-        "version_id": 1000070,
-        "version_string": "1.0.0",
-        "hash": "a9165cf1fe261e94789a71e7b5f4d84a"
+        "version_id": 2000170,
+        "version_string": "2.0.1",
+        "hash": "e7fe7e20eecb0448047825b85403e611"
     },
     "public/btcpay_show_invoice.html": {
-        "version_id": 1000070,
-        "version_string": "1.0.0",
-        "hash": "a0a713a494e738cace700070c9960101"
+        "version_id": 2000170,
+        "version_string": "2.0.1",
+        "hash": "d20d9603fe53d783a9b4a5e9044db92a"
     }
 }

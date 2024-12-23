@@ -1,10 +1,10 @@
-<xf:js src="{$scriptUrl}" />
 <xf:js>
-	(() => {
-		const overlays = document.querySelectorAll('.overlay-container.is-active')
-		const lastOverlay = overlays[overlays.length - 1]
-		lastOverlay.querySelector('.overlay').dispatchEvent(new Event('overlay:hide'))
-		window.btcpay.showInvoice('{$invoice.getId()}')
-	})()
+	window.btcpay.xfRegistry ??= {}
+	window.btcpay.xfRegistry.nextInvoiceId = '{$invoice.getId()}'
+	window.btcpay?.xf?.openNextInvoice()
 </xf:js>
-<div><!-- XF 2.3 need HTML content to run JS inline --></div>
+<xf:js src="{$scriptUrl}" />
+<xf:js src="bs/btcpay/payment.js" min="1" />
+<xf:if is="contains($xf.version, '2.3.')">
+	<div><!-- XF 2.3 need HTML content to run JS inline --></div>
+</xf:if>

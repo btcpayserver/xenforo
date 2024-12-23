@@ -7,7 +7,19 @@
 <xf:js src="{$extra.scriptUrl}" />
 <xf:js>
 	(() => {
-		const link = document.querySelector('#{$uid}')
-		link.addEventListener('click', () => window.btcpay.showInvoice('{$extra.invoice.id}'))
+		const uid = '#{$uid}'
+		const invoiceId = '{$extra.invoice.id}'
+		window.btcpay.xfRegistry ??= {}
+		window.btcpay.xfRegistry.clickBinds ??= {}
+	
+		if (window.btcpay.xfRegistry.clickBinds[uid]) return;
+	
+		window.btcpay.xfRegistry.clickBinds[uid] = true;
+	
+		document.addEventListener('click', e => {
+			if (e.target.matches(uid) || e.target.closest(uid)) {
+				window.btcpay.showInvoice(invoiceId)
+			}
+		})
 	})()
 </xf:js>
