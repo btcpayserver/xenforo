@@ -4,6 +4,7 @@ namespace BS\BtcPayProvider\Payment;
 
 use BS\BtcPayProvider\Helpers\Purchase as PurchaseHelper;
 use BTCPayServer\Client\Invoice;
+use BTCPayServer\Client\InvoiceCheckoutOptions;
 use BTCPayServer\Client\Store;
 use BTCPayServer\Client\Webhook;
 use BTCPayServer\Util\PreciseNumber;
@@ -83,7 +84,12 @@ class BTCPayServer extends AbstractProvider
 
         $invoiceClient = new Invoice($options['host'], $options['api_key']);
 
+        $checkoutOptions = new InvoiceCheckoutOptions();
+        $checkoutOptions->setRedirectURL($purchase->returnUrl);
+        $checkoutOptions->setRedirectAutomatically(true);
+
         try {
+
             return $invoiceClient->createInvoice(
                 $options['store_id'],
                 $purchaseRequest->cost_currency,
@@ -93,7 +99,8 @@ class BTCPayServer extends AbstractProvider
                 [
                     'request_key' => $purchaseRequest->request_key,
                     'purchase_request_id' => $purchaseRequest->purchase_request_id,
-                ]
+                ],
+                $checkoutOptions
             );
         } catch (\Exception $e) {
             \XF::logException($e, false, 'BTCPay Server invoice creation failed: ');
