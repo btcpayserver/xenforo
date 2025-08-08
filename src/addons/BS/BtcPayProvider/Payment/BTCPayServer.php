@@ -51,6 +51,27 @@ class BTCPayServer extends AbstractProvider
         );
     }
 
+    public function processPayment(
+        Controller $controller,
+        PurchaseRequest $purchaseRequest,
+        PaymentProfile $paymentProfile,
+        Purchase $purchase
+    ) {
+        $invoice = $this->getInvoice($purchaseRequest->provider_metadata, $paymentProfile);
+
+        if (! $invoice) {
+            throw $controller->exception($controller->noPermission());
+        }
+
+        $scriptUrl = $purchaseRequest->PaymentProfile->options['host'] . '/modal/btcpay.js';
+
+        return $controller->view(
+            'BS\BtcPayServer:Initiate\BTCPayServer',
+            'btcpay_show_invoice',
+            compact('purchaseRequest', 'invoice', 'scriptUrl')
+        );
+    }
+
     protected function sendAlertWithInvoice(
         Purchase $purchase,
         InvoiceResult $invoice,
@@ -105,6 +126,16 @@ class BTCPayServer extends AbstractProvider
         } catch (\Exception $e) {
             \XF::logException($e, false, 'BTCPay Server invoice creation failed: ');
             $error = \XF::phrase('btcpayprovider_invoice_creation_failed');
+            return null;
+        }
+    }
+
+    protected function getInvoice(string $invoiceId, PaymentProfile $paymentProfile): ?InvoiceResult
+    {
+        $invoiceClient = new Invoice($paymentProfile->options['host'], $paymentProfile->options['api_key']);
+        try {
+            return $invoiceClient->getInvoice($paymentProfile->options['store_id'], $invoiceId);
+        } catch (\Exception $e) {
             return null;
         }
     }
