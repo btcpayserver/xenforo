@@ -1,14 +1,17 @@
 {
     "legacy_addon_id": "",
-    "title": "[021] BTCPay Provider",
+    "title": "BTCPay Provider",
     "description": "Payment provider for BTCPay Server.",
-    "version_id": 2000270,
-    "version_string": "2.0.2",
-    "dev": "021",
-    "dev_url": "https://devsell.io/",
+    "version_id": 2000370,
+    "version_string": "2.0.3",
+    "dev": "Genesis\u2122",
+    "dev_url": "https://gnz.is",
     "faq_url": "",
-    "support_url": "https://devsell.io/",
-    "extra_urls": [],
+    "support_url": "",
+    "extra_urls": {
+        "Discover more amazing add-ons": "https://gnz.is",
+        "Order custom services": "https://gnz.is/go/customdev"
+    },
     "require": {
         "XF": [
             2020070,
