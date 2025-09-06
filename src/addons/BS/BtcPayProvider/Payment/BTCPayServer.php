@@ -38,7 +38,7 @@ class BTCPayServer extends AbstractProvider
 
         $purchaseRequest->fastUpdate('provider_metadata', $invoice->getId());
 
-        $scriptUrl = $purchaseRequest->PaymentProfile->options['host'] . '/modal/btcpay.js';
+        $scriptUrl = $this->modalJsUrl($purchaseRequest->PaymentProfile);
 
         if ($purchaseRequest->PaymentProfile->options['invoice_alert'] ?? false) {
             $this->sendAlertWithInvoice($purchase, $invoice, $scriptUrl);
@@ -63,13 +63,18 @@ class BTCPayServer extends AbstractProvider
             throw $controller->exception($controller->noPermission());
         }
 
-        $scriptUrl = $purchaseRequest->PaymentProfile->options['host'] . '/modal/btcpay.js';
+        $scriptUrl = $this->modalJsUrl($paymentProfile);
 
         return $controller->view(
             'BS\BtcPayServer:Initiate\BTCPayServer',
             'btcpay_show_invoice',
             compact('purchaseRequest', 'invoice', 'scriptUrl')
         );
+    }
+
+    protected function modalJsUrl(PaymentProfile $paymentProfile): string
+    {
+        return $paymentProfile->options['host'].'/modal/btcpay.js';
     }
 
     protected function sendAlertWithInvoice(
@@ -249,7 +254,6 @@ class BTCPayServer extends AbstractProvider
         $apiKey = $options['api_key'] ?? '';
         $storeId = $options['store_id'] ?? '';
         $secret = $options['secret'] ?? '';
-        $invoiceAlert = (bool) ($options['invoice_alert'] ?? false);
 
         $host = $options['host'] = rtrim($host, '/');
 
