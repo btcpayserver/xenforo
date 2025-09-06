@@ -120,6 +120,7 @@ class BTCPayServer extends AbstractProvider
                 [
                     'request_key' => $purchaseRequest->request_key,
                     'purchase_request_id' => $purchaseRequest->purchase_request_id,
+                    'itemDesc' => $purchase->title,
                 ],
                 $checkoutOptions
             );
